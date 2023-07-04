@@ -12,7 +12,7 @@ const ActivityModel = require('./models/Activity')
 //   native: false, 
 // });
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
   {
   logging: false, 
   native: false, 
