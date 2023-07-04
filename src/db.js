@@ -4,19 +4,19 @@ const CountryModel = require('./models/Country')
 const ActivityModel = require('./models/Activity')
 
 
-const {  DB_USER, DB_PASSWORD, DB_HOSTPG, DB_DATABASE} = process.env;
-// const sequelize = new Sequelize( DB_DEPLOY,
+const {  DB_USER, DB_PASSWORD, DB_HOSTPG, DB_DATABASE, DB_DEPLOY} = process.env;
+const sequelize = new Sequelize( DB_DEPLOY,
   
-//   {
-//   logging: false, 
-//   native: false, 
-// });
-const sequelize = new Sequelize(
-  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
   {
   logging: false, 
   native: false, 
 });
+// const sequelize = new Sequelize(
+//   `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
+//   {
+//   logging: false, 
+//   native: false, 
+// });
 
 
 CountryModel(sequelize);
