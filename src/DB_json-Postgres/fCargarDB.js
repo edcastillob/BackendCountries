@@ -4,9 +4,7 @@ const axios = require('axios');
 
 async function fCargarDB(){
 
-const verificar = Country.findAll();
-console.log(verificar.length)
-if (!verificar){
+
   const conexApi = await axios.get('http://localhost:5000/countries');
   let countries = conexApi.data.map((e) => {
       return {
@@ -24,9 +22,6 @@ if (!verificar){
       })
         await Country.bulkCreate(countries);
         console.log('DataBase Created...')
-}else{
-  console.log('DataBase Done...')
-}
 
       
   }

@@ -4,7 +4,7 @@ const fCargarDB = require('./src/DB_json-Postgres/fCargarDB.js');
 const PORT = 3001 || process.env.PORT;
 
 
-conn.sync({ force: false })
+conn.sync({ force: true })
 .then(() => {
   fCargarDB()
   server.listen(PORT, () => {

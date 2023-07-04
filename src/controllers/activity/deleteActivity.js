@@ -1,5 +1,7 @@
 const { Activity } = require('../../db');
 
+
+
 const deleteActivity = async (req, res) => {
     try {
         const { id } = req.params;
