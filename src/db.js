@@ -12,7 +12,7 @@ const {  DB_USER, DB_PASSWORD, DB_HOSTPG, DB_DATABASE} = process.env;
 //   native: false, 
 // });
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOSTPG}/${DB_DATABASE}`, 
   {
   logging: false, 
   native: false, 
