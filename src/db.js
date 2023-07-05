@@ -7,19 +7,14 @@ const ActivityModel = require('./models/Activity')
 // const {  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 const {DB_DEPLOY } = process.env;
 const sequelize = new Sequelize( DB_DEPLOY,
-  
-  {
-  logging: false, 
-  native: false, 
-  dialectModule: pg,
+{
+
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {
+    ssl: true,
+  },
 });
-// const sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, 
-//   {
-//   logging: false, 
-//   native: false, 
-//   dialectModule:pg,
-// });
 
 
 CountryModel(sequelize);
